@@ -1,5 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package paquetecinco;
 
-package paqueteseis;
+import java.util.ArrayList;
 
 public class EstudiantePresencial extends Estudiante{
     /*1.  Declarar
@@ -8,11 +14,10 @@ public class EstudiantePresencial extends Estudiante{
         */
     int numeroCreditos;
     double costoCredito;
-
-    public EstudiantePresencial(String nombre, String apellido) {
-        super(nombre, apellido);
-    }
    
+    public EstudiantePresencial(){
+        
+    }
     //  Métodos establecer y calcular para los datos o atributos de la clase
     // 2.  Método establecerNumeroCreditos(numero: Real)
     public void establecerNumeroCreditos(int numero){
@@ -41,6 +46,24 @@ public class EstudiantePresencial extends Estudiante{
     // 6. Método obtenerCostoCredito() : Real
     public double obtenerCostoCredito(){
         return costoCredito;
+    }
+    public double obtenerMatriculaPresencial(){
+     return matricula;   
+    }
+
+    @Override
+    public String toString(){ 
+        String cadenaFinal = String.format("%s\n", super.toString());
+        cadenaFinal = String.format("%s\n"
+                + "Numero Creditos: %.2f\n"
+                + "Costo Credito: %d\n"
+                + "Total Matricula: %.2f\n",
+                cadenaFinal,
+                obtenerCostoCredito(),
+                obtenerNumeroCreditos(),
+                obtenerMatriculaPresencial());
+        
+        return cadenaFinal;
     }
     
 }

@@ -1,5 +1,5 @@
 
-package paqueteseis;
+package paquetecinco;
 
 public class EstudianteDistancia extends Estudiante {
     /*1.  Declarar
@@ -9,10 +9,6 @@ public class EstudianteDistancia extends Estudiante {
     
     int numeroAsignaturas;
     double costoAsignatura;
-
-    public EstudianteDistancia(String nombre, String apellido) {
-        super(nombre, apellido);
-    }
     
     //  Métodos establecer y calcular para los datos o atributos de la clase
     
@@ -41,6 +37,23 @@ public class EstudianteDistancia extends Estudiante {
     // 6. Método obtenerCostoAsignatura() : Real
     public double obtenerCostoAsignatura(){
         return costoAsignatura;
+    }
+    public double obtenerMatriculaDistancia(){
+        return matricula;
+    }
+    @Override
+     public String toString(){ 
+        String cadenaFinal = String.format("%s\n", super.toString());
+        cadenaFinal = String.format("%s\n"
+                + "Numero Asignaturas: %.2f\n"
+                + "Costo Asignaturas: %d\n"
+                + "Total Matricula: %.2f\n",
+                cadenaFinal,
+                obtenerNumeroAsignaturas(),
+                obtenerCostoAsignatura(),
+                obtenerMatriculaDistancia());
+        
+        return cadenaFinal;
     }
         
 }
